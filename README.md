@@ -1,6 +1,8 @@
 # FiveM Standalone RP Chat & Command Basic Pack
 
 # Features
+- Built In Version Checker
+
 ### Chat
 - Proximity Chat
 - /ooc (Global Chat)
