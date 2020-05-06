@@ -1,4 +1,4 @@
-
+--Standard Chat
 RegisterNetEvent('sendProximityMessage')
 AddEventHandler('sendProximityMessage', function(id, name, message)
   local myId = PlayerId()
@@ -10,6 +10,7 @@ AddEventHandler('sendProximityMessage', function(id, name, message)
   end
 end)
 
+--/me Command
 RegisterNetEvent('sendProximityMessageMe')
 AddEventHandler('sendProximityMessageMe', function(id, name, message)
   local myId = PlayerId()
@@ -17,10 +18,11 @@ AddEventHandler('sendProximityMessageMe', function(id, name, message)
   if pid == myId then
     TriggerEvent('chatMessage', "", {255, 0, 0}, " ^6 ^*ME | ^7" .. name .."^7: ".."^r " .. message)
   elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(myId)), GetEntityCoords(GetPlayerPed(pid)), true) < 19.999 then
-    TriggerEvent('chatMessage', "", {255, 0, 0}, " ^6 ^*Me | ^7" .. name .."^7: ".."^r " .. message)
+    TriggerEvent('chatMessage', "", {255, 0, 0}, " ^6 ^*ME | ^7" .. name .."^7: ".."^r " .. message)
   end
 end)
 
+--/do Command
 RegisterNetEvent('sendProximityMessageDo')
 AddEventHandler('sendProximityMessageDo', function(id, name, message)
   local myId = PlayerId()
