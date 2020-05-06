@@ -1,3 +1,6 @@
+--					 ==========================
+--					 Copyright © 2020 SenkaWolf
+--					 ==========================
 
 --/dv Command
 RegisterNetEvent("delveh")

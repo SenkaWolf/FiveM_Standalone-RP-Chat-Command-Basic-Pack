@@ -1,3 +1,7 @@
+--					 ==========================
+--					 Copyright © 2020 SenkaWolf
+--					 ==========================
+
 --Standard Chat
 RegisterNetEvent('sendProximityMessage')
 AddEventHandler('sendProximityMessage', function(id, name, message)

@@ -1,3 +1,6 @@
+--					 ==========================
+--					 Copyright © 2020 SenkaWolf
+--					 ==========================
 
 --/hu Command
 RegisterNetEvent("THU")
@@ -183,4 +186,29 @@ Citizen.CreateThread(function()
 		
 			Citizen.Wait(0)
       end
+end)
+
+-------------------------------------------------------------------------------
+
+--/crouch Command
+local cr = false
+local inf = "move_ped_crouched"
+RegisterNetEvent("TogC")
+AddEventHandler("TogC", function()
+	
+	local pP = GetPlayerPed(-1)
+	if DoesEntityExist(pP) then
+		Citizen.CreateThread(function()
+			RequestAnimSet(inf)
+			while not HasAnimSetLoaded(inf) do
+				Citizen.Wait(100)
+			end			
+			if cr then
+				ResetPedMovementClipset(pP, 0)
+			else
+				SetPedMovementClipset(pP, inf, 0.25)
+			end
+			cr = not cr
+		end)
+	end
 end)

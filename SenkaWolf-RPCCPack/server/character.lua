@@ -1,3 +1,6 @@
+--					 ==========================
+--					 Copyright © 2020 SenkaWolf
+--					 ==========================
 
 --/hu Command
 -- Cancel all commands being sent to class
@@ -10,10 +13,6 @@ AddEventHandler("chatMessage", function(source, name, message)
 		end
 	end
 end)
-
-function startswith(String, Start)
-	return string.sub(String,1,string.len(Start))==Start
-end
 
 -------------------------------------------------------------------------------
 
@@ -48,7 +47,26 @@ end)
 
 -------------------------------------------------------------------------------
 
---Used in /hu and /emote
+--/crouch Command
+-- Cancel all commands being sent to class
+AddEventHandler("chatMessage", function(source, name, message)
+	if (startswith(message, "/")) then
+		local cmd = stringsplit(message, " ")
+		if cmd[1] == "/crouch" then
+			CancelEvent()
+			TriggerClientEvent("TogC", source)
+		end
+	end
+end)
+
+-------------------------------------------------------------------------------
+
+--Used in /hu, /emote & /crouch
+
+function startswith(String, Start)
+	return string.sub(String,1,string.len(Start))==Start
+end
+
 --String Splitting
 function stringsplit(inputstr, sep)
     if sep == nil then

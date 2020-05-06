@@ -22,6 +22,7 @@ Three styles of /ad to pick from within the `server/chat.lua file`.
 - /emotes - Lists Supported Emotes
 - /emote [name] - Does The Specified Emote
 - /point - Points
+- /crouch - Puts Your Character In A Crouch Position When Moving
 
 ### Vehicle Commands
 - /hood - Opens Vehicle Hood/Bonnet

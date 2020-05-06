@@ -1,3 +1,7 @@
+--					 ==========================
+--					 Copyright © 2020 SenkaWolf
+--					 ==========================
+
 --Standard Chat
 AddEventHandler('chatMessage', function(source, name, message)
   if string.sub(message, 1, string.len("/")) ~= "/" then
