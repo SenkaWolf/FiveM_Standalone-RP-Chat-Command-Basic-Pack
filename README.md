@@ -1,11 +1,11 @@
 # FiveM Standalone RP Chat & Command Basic Pack
 
 # Features
-## Chat
+### Chat
 - Proximity Chat
 - /ooc (Global Chat)
 - /me (Proximity Chat)
-- /gme (Global `/me` Command Chat)
+- /gme (Global /me Command Chat)
 - /do (Proximity Chat)
 - /ad (Global Chat)
 - /twt (Global Chat)
@@ -13,14 +13,14 @@
 
 Three styles of /ad to pick from within the `server/chat.lua file`.
 
-## Character Commands
+### Character Commands
 - /hu - Hands Up Animation
 - /huk - Hands Up Kneel Animation
 - /emotes - Lists Supported Emotes
 - /emote [name] - Does The Specified Emote
 - /point - Points
 
-## Vehicle Commands
+### Vehicle Commands
 - /hood - Opens Vehicle Hood/Bonnet
 - /trunk - Opens Vehicle Trunk/Boot
 - /dv - Delete Vehicle (Near or in drivers seat)
