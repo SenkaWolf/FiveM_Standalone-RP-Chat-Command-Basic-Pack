@@ -1,6 +1,7 @@
 # FiveM Standalone RP Chat & Command Basic Pack
 
 # Features
+### Misc
 - Built In Version Checker
 
 ### Chat
@@ -29,7 +30,7 @@ Three styles of /ad to pick from within the `server/chat.lua file`.
 
 # Installation: 
 - Extract the folder `SenkaWolf-RPCCPack` to your resources folder. 
-- Add the line "start `SenkaWolf-RPCCPack` to the server.cfg file.
+- Add the line `start SenkaWolf-RPCCPack` to the server.cfg file.
 
 # Download
 Get the latest version [here](https://github.com/SenkaWolf/FiveM-Standalone-RP-Chat-Command-Basic-Pack/releases/latest).
