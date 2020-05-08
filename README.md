@@ -3,6 +3,7 @@
 # Features
 ### Misc
 - Built In Version Checker
+- Toggle Features (Coming Soon)
 
 ### Chat
 - Proximity Chat
@@ -14,7 +15,7 @@
 - /twt (Global Chat)
 - /darkweb (Global Chat)
 
-Three styles of /ad to pick from within the `server/chat.lua file`.
+Three styles of /ad command output to pick from within the `config.lua` file.
 
 ### Character Commands
 - /hu - Hands Up Animation
