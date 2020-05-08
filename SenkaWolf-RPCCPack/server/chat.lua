@@ -40,10 +40,13 @@ end, false)
 
 --/ad Command
 RegisterCommand('ad', function(source, args, user)
---// IF YOU WANT TO USE A DIFFRENT ADVERT STYLE REMOVE THE TWO '--' BEFORE A LINE AND PUT TWO '--' BEFORE THE OLD LINE \\--
---TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0] " .. GetPlayerName(source), {255,215,0}, table.concat(args, " ")) --ADVERT WITH USERNAME
---TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0] (^1@" .. GetPlayerName(source) .. "^0)^r", {255,215,0}, table.concat(args, " ")) --ADVERT WITH TWITTER STYLE USERNAME HANDLE
-TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0]^r", {255,215,0}, table.concat(args, " ")) --ADVERT WITH NO USERS IDENTIFIER
+		if AdStyle == 1 then
+			TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0] " .. GetPlayerName(source), {255,215,0}, table.concat(args, " ")) --ADVERT WITH USERNAME
+		elseif AdStyle == 2 then
+			TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0] (^1@" .. GetPlayerName(source) .. "^0)^r", {255,215,0}, table.concat(args, " ")) --ADVERT WITH TWITTER STYLE USERNAME HANDLE
+		elseif AdStyle == 3 then
+			TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0]^r", {255,215,0}, table.concat(args, " ")) --ADVERT WITH NO USERS IDENTIFIER
+		end
 end, false)
 
 --/darkweb Command

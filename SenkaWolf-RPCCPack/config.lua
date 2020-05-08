@@ -4,14 +4,22 @@
 
 Config = {}
 
+-- //[TOGGLE FEATURES]\\ --
+
+-------------------------------------------------------------------------------
+
+-- //[SETTINGS]\\ --
+
 -- /ad Command Output Styles
 -- 1 = Advert with Steam name. E.g "[ADVERT]SteamName: YOUR TEXT"
 -- 2 = Advert with twitter style Steam handle name. E.g "[ADVERT](@SteamName): YOUR TEXT"
 -- 3 = Advert with no users identifier. E.g "[ADVERT]: YOUR TEXT"
-AdStyle = 3 -- WORK IN PROGRESS | NOT WORKING 
+AdStyle = 3
 
--- Supported Emotes
--- More emotes available at https://pastebin.com/6mrYTdQv
+-------------------------------------------------------------------------------
+
+-- //[EMOTE LIST]\\ --
+-- You can add more by copying one of the below lines and using the follow link to pick a animation https://pastebin.com/6mrYTdQv
 Emotes = {}
 Emotes['cop'] = {name = 'cop', anim = 'WORLD_HUMAN_COP_IDLES'}
 Emotes['binoculars'] = {name = 'binoculars', anim = 'WORLD_HUMAN_BINOCULARS'}
