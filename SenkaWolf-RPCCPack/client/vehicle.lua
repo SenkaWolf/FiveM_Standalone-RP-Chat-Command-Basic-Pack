@@ -3,8 +3,8 @@
 --					 ==========================
 
 --/dv Command
-RegisterNetEvent("delveh")
-AddEventHandler("delveh", function()
+RegisterNetEvent("DVCommand")
+AddEventHandler("DVCommand", function()
 	Citizen.Trace("HI")
 	local ped = GetPlayerPed(-1)
 	if (IsPedSittingInAnyVehicle(ped)) then

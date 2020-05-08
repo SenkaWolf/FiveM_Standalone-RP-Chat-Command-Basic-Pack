@@ -6,7 +6,7 @@
 AddEventHandler('chatMessage', function(source, name, message)
   if string.sub(message, 1, string.len("/")) ~= "/" then
 	  local name = GetPlayerName(source)
-	TriggerClientEvent("sendProximityMessage", -1, source, name, message)
+	TriggerClientEvent("SendProximityMessage", -1, source, name, message)
   end
   CancelEvent()
 end)
@@ -14,13 +14,13 @@ end)
 --/me Command
 RegisterCommand('me', function(source, args, user)
   local name = GetPlayerName(source)
-  TriggerClientEvent("sendProximityMessageMe", -1, source, name, table.concat(args, " "))
+  TriggerClientEvent("SendProximityMessageMe", -1, source, name, table.concat(args, " "))
 end, false)
 
 --/do Command
 RegisterCommand('do', function(source, args, user)
   local name = GetPlayerName(source)
-  TriggerClientEvent("sendProximityMessageDo", -1, source, name, table.concat(args, " "))
+  TriggerClientEvent("SendProximityMessageDo", -1, source, name, table.concat(args, " "))
 end, false)
 
 --/gme Command

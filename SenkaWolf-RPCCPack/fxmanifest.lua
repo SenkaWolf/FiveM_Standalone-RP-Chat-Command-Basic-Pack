@@ -1,3 +1,7 @@
+-- Define the FX Server version and game type
+fx_version "adamant"
+game "gta5"
+
 -- Manifest
 resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
@@ -5,11 +9,12 @@ resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 name 'SenkaWolf-RPCCPack'
 description 'FiveM Standalone RP Chat & Command Basic Pack'
 author 'SenkaWolf (https://github.com/SenkaWolf)'
-version '2.1.0'
+version '2.1.2'
 url 'https://github.com/SenkaWolf/RPChat'
 
 -- Script
 client_scripts {
+	'config.lua',
 	'client/chat.lua',
 	'client/character.lua',
 	'client/vehicle.lua'

@@ -9,7 +9,7 @@ AddEventHandler("chatMessage", function(source, name, message)
 		local cmd = stringsplit(message, " ")
 		if cmd[1] == "/hu" then
 			CancelEvent()
-			TriggerClientEvent("THU", source)
+			TriggerClientEvent("HUCommand", source)
 		end
 	end
 end)
@@ -21,7 +21,7 @@ RegisterServerEvent("chatMessage")
 AddEventHandler("chatMessage", function(source, n, message)
 	if message == "/huk" then
 		CancelEvent()
-		TriggerClientEvent("HandsupKnees", source)
+		TriggerClientEvent("HUKCommand", source)
 	end
 end)
 
@@ -34,14 +34,14 @@ AddEventHandler('chatMessage', function(source, n, message)
 	
 	if msg[1] == "/emotes" then
 		CancelEvent()
-		TriggerClientEvent("show", source)		
+		TriggerClientEvent("EmoteListCommand", source)		
 	elseif msg[1] == "/emote" then
 		CancelEvent()
-		TriggerClientEvent("play", source, msg[2])
+		TriggerClientEvent("PlayEmoteCommand", source, msg[2])
 		
 	elseif msg[1] == "/point" then
 		CancelEvent()
-		TriggerClientEvent("point", source)
+		TriggerClientEvent("PointCommand", source)
 	end
 end)
 
@@ -54,7 +54,7 @@ AddEventHandler("chatMessage", function(source, name, message)
 		local cmd = stringsplit(message, " ")
 		if cmd[1] == "/crouch" then
 			CancelEvent()
-			TriggerClientEvent("TogC", source)
+			TriggerClientEvent("CrouchCommand", source)
 		end
 	end
 end)
@@ -67,7 +67,7 @@ function startswith(String, Start)
 	return string.sub(String,1,string.len(Start))==Start
 end
 
---String Splitting
+--String splits by the separator.
 function stringsplit(inputstr, sep)
     if sep == nil then
         sep = "%s"

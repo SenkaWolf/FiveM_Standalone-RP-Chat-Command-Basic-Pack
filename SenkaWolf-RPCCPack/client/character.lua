@@ -3,8 +3,8 @@
 --					 ==========================
 
 --/hu Command
-RegisterNetEvent("THU")
-AddEventHandler("THU", function()
+RegisterNetEvent("HUCommand")
+AddEventHandler("HUCommand", function()
 	
 	local playerPed = GetPlayerPed(-1)
 	if DoesEntityExist(playerPed) then
@@ -28,8 +28,8 @@ end)
 --/huk Command
 local HUKToggle = false
 
-RegisterNetEvent("HandsupKnees")
-AddEventHandler("HandsupKnees", function()
+RegisterNetEvent("HUKCommand")
+AddEventHandler("HUKCommand", function()
 	HUKToggle = not HUKToggle
 	ToggleHUK(HUKToggle)
 end)
@@ -74,71 +74,25 @@ end
 -------------------------------------------------------------------------------
 
 --/emote Command
-RegisterNetEvent('play');
-RegisterNetEvent('show');
-RegisterNetEvent('point');
-
--- Supported Emotes
-local emotes = {}
-emotes['cop'] = {name = 'cop', anim = 'WORLD_HUMAN_COP_IDLES'}
-emotes['binoculars'] = {name = 'binoculars', anim = 'WORLD_HUMAN_BINOCULARS'}
-emotes['cheer'] = {name = 'cheer', anim = 'WORLD_HUMAN_CHEERING'}
-emotes['coffee'] = {name = 'coffe', anim = 'WORLD_HUMAN_DRINKING'}
-emotes['smoke'] = {name = 'smoke', anim = 'WORLD_HUMAN_SMOKING'}
-emotes['film'] = {name = 'film', anim = 'WORLD_HUMAN_MOBILE_FILM_SHOCKING'}
-emotes['plant'] = {name = 'plant', anim = 'WORLD_HUMAN_GARDENER_PLANT'}
-emotes['guard'] = {name = 'guard', anim = 'WORLD_HUMAN_GUARD_STAND'}
-emotes['hammer'] = {name = 'hammer', anim = 'WORLD_HUMAN_HAMMERING'}
-emotes['hangout'] = {name = 'hangout', anim = 'WORLD_HUMAN_HANG_OUT_STREET'}
-emotes['hiker'] = {name = 'hiker', anim = 'WORLD_HUMAN_HIKER_STANDING'}
-emotes['statue'] = {name = 'statue', anim = 'WORLD_HUMAN_HUMAN_STATUE'}
-emotes['jog'] = {name = 'jog', anim = 'WORLD_HUMAN_JOG_STANDING'}
-emotes['lean'] = {name = 'lean', anim = 'WORLD_HUMAN_LEANING'}
-emotes['flex'] = {name = 'flex', anim = 'WORLD_HUMAN_MUSCLE_FLEX'}
-emotes['camera'] = {name = 'camera', anim = 'WORLD_HUMAN_PAPARAZZI'}
-emotes['sit'] = {name = 'sit', anim = 'WORLD_HUMAN_PICNIC'}
-emotes['sitchair'] = {name = 'sitchair', anim = 'PROP_HUMAN_SEAT_CHAIR_MP_PLAYER'}
-emotes['hoe'] = {name = 'hoe', anim = 'WORLD_HUMAN_PROSTITUTE_HIGH_CLASS'}
-emotes['hoe2'] = {name = 'hoe2', anim = 'WORLD_HUMAN_PROSTITUTE_LOW_CLASS'}
-emotes['pushups'] = {name = 'pushups', anim = 'WORLD_HUMAN_PUSH_UPS'}
-emotes['situps'] = {name = 'situps', anim = 'WORLD_HUMAN_SIT_UPS'}
-emotes['fish'] = {name = 'fish', anim = 'WORLD_HUMAN_STAND_FISHING'}
-emotes['impatient'] = {name = 'impatient', anim = 'WORLD_HUMAN_STAND_IMPATIENT'}
-emotes['mobile'] = {name = 'mobile', anim = 'WORLD_HUMAN_STAND_MOBILE'}
-emotes['diggit'] = {name = 'diggit', anim = 'WORLD_HUMAN_STRIP_WATCH_STAND'}
-emotes['sunbath'] = {name = 'sunbath', anim = 'WORLD_HUMAN_SUNBATHE_BACK'}
-emotes['sunbath2'] = {name = 'sunbath2', anim = 'WORLD_HUMAN_SUNBATHE'}
-emotes['weld'] = {name = 'weld', anim = 'WORLD_HUMAN_WELDING'}
-emotes['yoga'] = {name = 'yoga', anim = 'WORLD_HUMAN_YOGA'}
-emotes['kneel'] = {name = 'kneel', anim = 'CODE_HUMAN_MEDIC_KNEEL'}
-emotes['crowdcontrol'] = {name = 'crowdcontrol', anim = 'CODE_HUMAN_POLICE_CROWD_CONTROL'}
-emotes['investigate'] = {name = 'investigate', anim = 'CODE_HUMAN_POLICE_INVESTIGATE'}
-emotes['clipboard'] = {name = 'clipboard', anim = 'WORLD_HUMAN_CLIPBOARD'}
-emotes['drill'] = {name = 'drill', anim = 'WORLD_HUMAN_CONST_DRILL'}
-emotes['pot'] = {name = 'pot', anim = 'WORLD_HUMAN_SMOKING_POT'}
-emotes['medic'] = {name = 'medic', anim = 'CODE_HUMAN_MEDIC_TEND_TO_DEAD'}
-emotes['notes'] = {name = 'notes', anim = 'CODE_HUMAN_MEDIC_TIME_OF_DEATH'}
-emotes['party'] = {name = 'party', anim = 'WORLD_HUMAN_PARTYING'}
-emotes['traffic'] = {name = 'traffic', anim = 'WORLD_HUMAN_CAR_PARK_ATTENDANT'}
-emotes['notepad'] = {name = 'notepad', anim = 'CODE_HUMAN_MEDIC_TIME_OF_DEATH'}
-emotes['weed'] = {name = 'weed', anim = 'WORLD_HUMAN_SMOKING_POT'}
-
+RegisterNetEvent('PlayEmoteCommand');
+RegisterNetEvent('EmoteListCommand');
+RegisterNetEvent('PointCommand');
 
 playing_emote = false;
 
 local Keys = { ["W"] = 32, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["H"] = 74}
 
-AddEventHandler('play', function(name)
-	if emotes[name] then
+AddEventHandler('PlayEmoteCommand', function(name)
+	if Emotes[name] then
 		ped = GetPlayerPed(-1);	
 		if ped then
 			if playing_emote == false then
-				if emotes[name].name == "sitchair" then
+				if Emotes[name].name == "sitchair" then
 					pos = GetEntityCoords(ped);
 					head = GetEntityHeading(ped);
-					TaskStartScenarioAtPosition(ped, emotes[name].anim, pos['x'], pos['y'], pos['z'] - 1, head, 0, 0, false);
+					TaskStartScenarioAtPosition(ped, Emotes[name].anim, pos['x'], pos['y'], pos['z'] - 1, head, 0, 0, false);
 				else
-					TaskStartScenarioInPlace(ped, emotes[name].anim, 0, true);
+					TaskStartScenarioInPlace(ped, Emotes[name].anim, 0, true);
 				end
 				playing_emote = true;
 
@@ -148,7 +102,7 @@ AddEventHandler('play', function(name)
 end)
 
 
-AddEventHandler('point', function()
+AddEventHandler('PointCommand', function()
 
 	pointing = not pointing
 	RequestAnimDict("anim@mp_point")
@@ -164,10 +118,10 @@ AddEventHandler('point', function()
 	end
 end)
 
-AddEventHandler('show', function()
+AddEventHandler('EmoteListCommand', function()
 	TriggerEvent('chatMessage', "^6^*RPCCPack Emotes", {255, 0, 0}, "^1Usage: /emote [name]");
 	local emoteslist = ""
-	for k in pairs(emotes) do
+	for k in pairs(Emotes) do
 		emoteslist = k .. ", ".. emoteslist
 	end
 	TriggerEvent('chatMessage', "", {255, 255, 255}, emoteslist);
@@ -193,8 +147,8 @@ end)
 --/crouch Command
 local cr = false
 local inf = "move_ped_crouched"
-RegisterNetEvent("TogC")
-AddEventHandler("TogC", function()
+RegisterNetEvent("CrouchCommand")
+AddEventHandler("CrouchCommand", function()
 	
 	local pP = GetPlayerPed(-1)
 	if DoesEntityExist(pP) then

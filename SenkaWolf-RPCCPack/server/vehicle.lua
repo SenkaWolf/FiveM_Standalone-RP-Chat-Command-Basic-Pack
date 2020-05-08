@@ -9,7 +9,7 @@ AddEventHandler('chatMessage', function(source, n, message)
 	if message == "/delveh" or message == "/dv" then
 	
 		CancelEvent()
-		TriggerClientEvent("delveh", source)
+		TriggerClientEvent("DVCommand", source)
 		
 	end
 end)
