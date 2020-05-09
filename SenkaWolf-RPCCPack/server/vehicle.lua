@@ -2,14 +2,16 @@
 --					 Copyright © 2020 SenkaWolf
 --					 ==========================
 
---/dv Command
-RegisterServerEvent("chatMessage")
-AddEventHandler('chatMessage', function(source, n, message)
+if EnableDVCommand == true then
+	--/dv Command
+	RegisterServerEvent("chatMessage")
+	AddEventHandler('chatMessage', function(source, n, message)
 
-	if message == "/delveh" or message == "/dv" then
-	
-		CancelEvent()
-		TriggerClientEvent("DVCommand", source)
+		if message == "/delveh" or message == "/dv" then
 		
-	end
-end)
+			CancelEvent()
+			TriggerClientEvent("DVCommand", source)
+			
+		end
+	end)
+end

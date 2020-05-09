@@ -5,10 +5,25 @@
 Config = {}
 
 -- //[TOGGLE FEATURES]\\ --
+EnableChatCommand = true -- Set to true if you want to be able to use Proximity Chat, /ooc, /me, /gme, /do, /ad, /twt and /darkweb.
+EnableDVCommand = true -- Set to true if you want the /dv command to work.
+EnableDiscordCommand = false -- Set to true if you want the /dc command to work. Define the Discord link in the Information Commands section below.
+EnableTeamSpeakCommand = false -- Set to true if you want the /ts command to work. Define the TeamSpeak link in the Information Commands section below.
+EnableWebsiteCommand = false -- Set to true if you want the /web command to work. Define the URL in the Information Commands section below.
 
 -------------------------------------------------------------------------------
 
 -- //[SETTINGS]\\ --
+
+-- LEO/EMS Commandsypswd
+JailPassword = "pswd" --Password needed to use the /jail and /unjain command. Only give this to LEO's.
+JailMaxSecs = 1000
+
+
+-- Information Commands
+DiscordLink = 'https://discord.gg/invitecodehere'
+TeamSpeakLink = 'ts.domainhere.com'
+WebsiteLink = 'https://www.domainhere.com'
 
 -- /ad Command Output Styles
 -- 1 = Advert with Steam name. E.g "[ADVERT]SteamName: YOUR TEXT"
