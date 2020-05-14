@@ -47,7 +47,7 @@ AddEventHandler("JP", function(jT)
 					ClearPedTasksImmediately(pP)
 				end
 				if jT % 30 == 0 then
-					TriggerEvent('chatMessage', 'SYSTEM', { 0, 0, 0 }, jT .." more seconds until release.")
+					TriggerEvent('chatMessage', 'WARDEN', { 0, 0, 0 }, jT .." more seconds until release.")
 				end
 				Citizen.Wait(500)
 				local pL = GetEntityCoords(pP, true)
@@ -64,7 +64,7 @@ AddEventHandler("JP", function(jT)
 				end
 				jT = jT - 0.5
 			end
-			TriggerServerEvent('chatMessageEntered', "SYSTEM", { 0, 0, 0 }, GetPlayerName(PlayerId()) .." was released from jail.")
+			TriggerServerEvent('chatMessageEntered', "WARDEN", { 0, 0, 0 }, GetPlayerName(PlayerId()) .." was released from jail.")
 			SetEntityCoords(pP, 1855.807, 2601.949, 45.323)
 			cJ = false
 			SetEntityInvincible(pP, false)

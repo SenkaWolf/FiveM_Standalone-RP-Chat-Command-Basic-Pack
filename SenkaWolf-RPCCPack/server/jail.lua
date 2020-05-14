@@ -19,9 +19,9 @@ RegisterCommand("jail", function(source, args, rawCommand)
 
 			if GetPlayerName(tPID) ~= nil then
 
-				print("Jailing ".. GetPlayerName(tPID).. " for ".. jT .." seconds due to " .. reason .. "issued by ".. GetPlayerName(source))
+				print("Jailing ".. GetPlayerName(tPID).. " for ".. jT .." seconds due to " .. reason .. " issued by ".. GetPlayerName(source))
 				TriggerClientEvent("JP", tPID, jT)
-				TriggerClientEvent('chatMessage', -1, 'JUDGE', { 0, 0, 0 }, GetPlayerName(tPID) ..' was jailed for '.. jT ..' secs due to ' .. reason)
+				TriggerClientEvent('chatMessage', -1, 'JUDGE', { 0, 0, 0 }, GetPlayerName(tPID) ..' was jailed for '.. jT ..' seconds due to ' .. reason)
 
 			end
 
@@ -49,7 +49,7 @@ RegisterCommand("unjail", function(source, args, rawCommand)
 
 			local tPID = tonumber(args[2])
 			if GetPlayerName(tPID) ~= nil then
-				print(GetPlayerName(source).. " Unjailed " .. GetPlayerName(tPID))
+				print(GetPlayerName(source).. " unjailed " .. GetPlayerName(tPID))
 				TriggerClientEvent("UnJP", tPID)
 			end
 

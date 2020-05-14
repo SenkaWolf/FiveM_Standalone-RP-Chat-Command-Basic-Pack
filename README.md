@@ -6,6 +6,7 @@ A resource which has roleplay chat functions, basic commands and more to be used
 ### Misc
 - Built In Version Checker.
 - Toggle Features.
+- AFK Kick.
 
 ### Chat
 - Proximity Chat.
@@ -42,13 +43,18 @@ Three styles of /ad command output to pick from within the `config.lua` file.
 - /jail [Jail Password] [ID] [Time in Seconds] [Reason for Jailing].
 - /jailme [Time in Seconds] [Reason for Jailing].
 - /unjail [Jail Password] [ID].
+- /hospital [Hospital Password] [ID] [Time in Seconds] [Reason for being admitted]. (Coming Soon)
+- /hospitalme [Time in Seconds] [Reason for being admitted]. (Coming Soon)
+- /unhospital [Hospital Password] [ID]. (Coming Soon)
+
+Passwords are set within `config.lua` file.
 
 # Installation:
 - Extract the folder `SenkaWolf-RPCCPack` to your resources folder.
 - Add the line `start SenkaWolf-RPCCPack` to the server.cfg file.
 
 # Download
-Get the latest version [here](https://github.com/SenkaWolf/FiveM-Standalone-RP-Chat-Command-Basic-Pack/releases/latest).
+Get the latest version [here](https://github.com/SenkaWolf/FiveM_Standalone-RP-Chat-Command-Basic-Pack/releases/latest).
 
 # Credits
 - Inspired by Wraith ARS 2X by WolfKnight for the version checker.

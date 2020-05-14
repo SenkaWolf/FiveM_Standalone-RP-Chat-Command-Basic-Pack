@@ -123,7 +123,7 @@ AddEventHandler('PlayEmoteCommand', function(name)
 	end
 end)
 
-
+--/point Command
 AddEventHandler('PointCommand', function()
 
 	pointing = not pointing
@@ -140,6 +140,7 @@ AddEventHandler('PointCommand', function()
 	end
 end)
 
+--/emotes Command
 AddEventHandler('EmoteListCommand', function()
 	TriggerEvent('chatMessage', "^6^*RPCCPack Emotes", {255, 0, 0}, "^1Usage: /emote [name]");
 	local emoteslist = ""
@@ -149,7 +150,7 @@ AddEventHandler('EmoteListCommand', function()
 	TriggerEvent('chatMessage', "", {255, 255, 255}, emoteslist);
 end)
 
-
+--Cancel emote when walk
 Citizen.CreateThread(function()
 	while true do
                 Citizen.Wait(10)

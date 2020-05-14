@@ -5,6 +5,7 @@
 Config = {}
 
 -- //[TOGGLE FEATURES]\\ --
+EnableAFK = true -- Set to true if you want to enable AFK kick.
 EnableChatCommand = true -- Set to true if you want to be able to use Proximity Chat, /ooc, /me, /gme, /do, /ad, /twt and /darkweb.
 EnableDVCommand = true -- Set to true if you want the /dv command to work.
 EnableDiscordCommand = false -- Set to true if you want the /dc command to work. Define the Discord link in the Information Commands section below.
@@ -15,10 +16,13 @@ EnableWebsiteCommand = false -- Set to true if you want the /web command to work
 
 -- //[SETTINGS]\\ --
 
--- LEO/EMS Commandsypswd
-JailPassword = "pswd" --Password needed to use the /jail and /unjain command. Only give this to LEO's.
-JailMaxSecs = 1000
+-- Server Management
+SecondsUntilKick = 1800 -- AFK Kick Time Limit In Seconds
+KickWarning = true -- Warn players if 3/4 of the Time Limit ran up
 
+-- LEO/EMS Commands
+JailPassword = "leo" --Password needed to use the /jail and /unjain command. Only give this to LEO's.
+JailMaxSecs = 1000
 
 -- Information Commands
 DiscordLink = 'https://discord.gg/invitecodehere'

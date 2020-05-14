@@ -2,8 +2,8 @@
 --					 Copyright © 2020 SenkaWolf
 --					 ==========================
 
+--/dv Command
 if EnableDVCommand == true then
-	--/dv Command
 	RegisterServerEvent("chatMessage")
 	AddEventHandler('chatMessage', function(source, n, message)
 

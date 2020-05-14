@@ -2,6 +2,7 @@
 --					 Copyright © 2020 SenkaWolf
 --					 ==========================
 
+--/dv Command
 if EnableDVCommand == true then
 	Citizen.CreateThread(function()
 
@@ -10,7 +11,6 @@ if EnableDVCommand == true then
 
 	end)
 
-	--/dv Command
 	RegisterNetEvent("DVCommand")
 	AddEventHandler("DVCommand", function()
 		Citizen.Trace("HI")

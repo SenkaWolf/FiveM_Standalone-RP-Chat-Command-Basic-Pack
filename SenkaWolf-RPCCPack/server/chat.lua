@@ -2,6 +2,7 @@
 --					 Copyright © 2020 SenkaWolf
 --					 ==========================
 
+-- Chat
 if EnableChatCommand == true then
 	--Standard Chat
 	AddEventHandler('chatMessage', function(source, name, message)
@@ -80,15 +81,15 @@ if EnableDiscordCommand == true then
 	end, false)
 end
 
+-- TeamSpeak Command
 if EnableTeamSpeakCommand == true then
-	-- TeamSpeak Command
 	RegisterCommand('ts', function()
 		TriggerClientEvent('chatMessage', -1, "^*TeamSpeak Server: ^_" .. TeamSpeakLink, {245, 191, 66})
 	end, false)
 end
 
+-- Website Command
 if EnableWebsiteCommand == true then
-	-- Website Command
 	RegisterCommand('web', function()
 		TriggerClientEvent('chatMessage', -1, "^*Website: ^_" .. WebsiteLink, {245, 191, 66})
 	end, false)
