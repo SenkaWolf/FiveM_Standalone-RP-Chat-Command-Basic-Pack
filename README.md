@@ -40,9 +40,9 @@ Three styles of /ad command output to pick from within the `config.lua` file.
 - /dv - Delete Vehicle (Near or in drivers seat).
 
 ### LEO/EMS Commands
-- /jail [Jail Password] [ID] [Time in Seconds] [Reason for Jailing].
-- /jailme [Time in Seconds] [Reason for Jailing].
-- /unjail [Jail Password] [ID].
+- /jail [Jail Password] [ID] [Time in Seconds] [Reason for Jailing]. (Coming Soon)
+- /jailme [Time in Seconds] [Reason for Jailing]. (Coming Soon)
+- /unjail [Jail Password] [ID]. (Coming Soon)
 - /hospital [Hospital Password] [ID] [Time in Seconds] [Reason for being admitted]. (Coming Soon)
 - /hospitalme [Time in Seconds] [Reason for being admitted]. (Coming Soon)
 - /unhospital [Hospital Password] [ID]. (Coming Soon)

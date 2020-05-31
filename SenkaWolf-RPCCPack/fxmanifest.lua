@@ -9,7 +9,7 @@ resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 name 'SenkaWolf-RPCCPack'
 description 'FiveM Standalone RP Chat & Command Basic Pack'
 author 'SenkaWolf (https://github.com/SenkaWolf)'
-version '2.3.0'
+version '2.3.1'
 url 'https://github.com/SenkaWolf/RPChat'
 
 -- Script
@@ -19,16 +19,14 @@ client_scripts {
 	'client/server-management.lua',
 	'client/chat.lua',
 	'client/character.lua',
-	'client/vehicle.lua',
-	'client/jail.lua'
+	'client/vehicle.lua'
 }
 server_script {
 	'sv-version-check.lua',
 	'server/server-management.lua',
 	'server/chat.lua',
 	'server/character.lua',
-	'server/vehicle.lua',
-	'server/jail.lua'
+	'server/vehicle.lua'
 }
 
 -- Made By SenkaWolf
