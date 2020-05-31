@@ -19,14 +19,16 @@ client_scripts {
 	'client/server-management.lua',
 	'client/chat.lua',
 	'client/character.lua',
-	'client/vehicle.lua'
+	'client/vehicle.lua',
+	'client/jail.lua'
 }
 server_script {
 	'sv-version-check.lua',
 	'server/server-management.lua',
 	'server/chat.lua',
 	'server/character.lua',
-	'server/vehicle.lua'
+	'server/vehicle.lua',
+	'server/jail.lua'
 }
 
 -- Made By SenkaWolf

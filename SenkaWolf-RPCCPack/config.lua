@@ -20,7 +20,7 @@ EnableWebsiteCommand = false -- Set to true if you want the /web command to work
 SecondsUntilKick = 1800 -- AFK Kick Time Limit In Seconds
 KickWarning = true -- Warn players if 3/4 of the Time Limit ran up
 
--- LEO/EMS Commands (Coming Soon)
+-- LEO/EMS Commands
 JailPassword = "leo" --Password needed to use the /jail and /unjain command. Only give this to LEO's.
 JailMaxSecs = 1000
 
