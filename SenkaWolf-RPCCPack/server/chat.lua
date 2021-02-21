@@ -2,6 +2,8 @@
 --					 Copyright © 2020 SenkaWolf
 --					 ==========================
 
+local image_link = 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png'
+
 -- Chat
 if EnableChatCommand == true then
 	--Standard Chat
@@ -15,45 +17,57 @@ if EnableChatCommand == true then
 
 	--/me Command
 	RegisterCommand('me', function(source, args, user)
-	  local name = GetPlayerName(source)
+		local name = GetPlayerName(source)
 	  TriggerClientEvent("SendProximityMessageMe", -1, source, name, table.concat(args, " "))
+	  TriggerEvent('DiscordBot:ToDiscord', 'chat', name, '[**ME**] ' .. table.concat(args, " "), image_link, true)
 	end, false)
 
 	--/do Command
 	RegisterCommand('do', function(source, args, user)
-	  local name = GetPlayerName(source)
+		local name = GetPlayerName(source)
 	  TriggerClientEvent("SendProximityMessageDo", -1, source, name, table.concat(args, " "))
+	  TriggerEvent('DiscordBot:ToDiscord', 'chat', name, '[**DO**] ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 	end, false)
 
 	--/gme Command
 	RegisterCommand('gme', function(source, args, user)
-	TriggerClientEvent('chatMessage', -1, "^3^*GLOBAL ME | ^7" .. GetPlayerName(source) .. "^r", {128, 128, 128}, table.concat(args, " "))
+		local name = GetPlayerName(source)
+	TriggerClientEvent('chatMessage', -1, "^3^*GLOBAL ME | ^7" .. name .. "^r", {128, 128, 128}, table.concat(args, " "))
+	TriggerEvent('DiscordBot:ToDiscord', 'chat', name, '[**GLOBAL ME**] ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 	end, false)
 
 	--/twt Command
 	RegisterCommand('twt', function(source, args, user)
-	TriggerClientEvent('chatMessage', -1, "^0^*[^4Twotter^0] (^5@" .. GetPlayerName(source) .. "^0)^r", {30, 144, 255}, table.concat(args, " "))
+		local name = GetPlayerName(source)
+	TriggerClientEvent('chatMessage', -1, "^0^*[^4Twotter^0] (^5@" .. name .. "^0)^r", {30, 144, 255}, table.concat(args, " "))
+	TriggerEvent('DiscordBot:ToDiscord', 'chat', name, '[**TWOTTER**] (**@' .. name .. '**) ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 	end, false)
 
 	--/ooc Command
 	RegisterCommand('ooc', function(source, args, user)
-	TriggerClientEvent('chatMessage', -1, "^*OOC | " .. GetPlayerName(source) .. "^r", {128, 128, 128}, table.concat(args, " "))
+		local name = GetPlayerName(source)
+	TriggerClientEvent('chatMessage', -1, "^*OOC | " .. name .. "^r", {128, 128, 128}, table.concat(args, " "))
+	TriggerEvent('DiscordBot:ToDiscord', 'chat', name, '[**OOC**] ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 	end, false)
 
 	--/ad Command
 	RegisterCommand('ad', function(source, args, user)
 			if AdStyle == 1 then
 				TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0] " .. GetPlayerName(source), {255,215,0}, table.concat(args, " ")) --ADVERT WITH USERNAME
+				TriggerEvent('DiscordBot:ToDiscord', 'chat', GetPlayerName(source), '[**ADVERT**] (**' .. GetPlayerName(source) .. '**) ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 			elseif AdStyle == 2 then
 				TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0] (^1@" .. GetPlayerName(source) .. "^0)^r", {255,215,0}, table.concat(args, " ")) --ADVERT WITH TWITTER STYLE USERNAME HANDLE
+				TriggerEvent('DiscordBot:ToDiscord', 'chat', GetPlayerName(source), '[**ADVERT**] (**@' .. GetPlayerName(source) .. '**) ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 			elseif AdStyle == 3 then
 				TriggerClientEvent('chatMessage', -1, "^0^*[^1ADVERT^0]^r", {255,215,0}, table.concat(args, " ")) --ADVERT WITH NO USERS IDENTIFIER
+				TriggerEvent('DiscordBot:ToDiscord', 'chat', GetPlayerName(source), '[**ADVERT**] ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 			end
 	end, false)
 
 	--/darkweb Command
 	RegisterCommand('darkweb', function(source, args, user)
 	TriggerClientEvent('chatMessage', -1, "^*[^*Dark Web] (@^*Anonymous)^r", {0, 0, 0}, table.concat(args, " "))
+	TriggerEvent('DiscordBot:ToDiscord', 'chat', GetPlayerName(source), '[**DARK WEB**] (**@Anonymous**) ' .. table.concat(args, " "), 'https://wiki.fivem.net/w/images/d/db/FiveM-Wiki.png', true)
 	end, false)
 
 	--String Splitting
