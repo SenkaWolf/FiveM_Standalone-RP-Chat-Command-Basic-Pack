@@ -38,7 +38,7 @@ function GetCurrentVersion()
 end 
 
 -- Grabs the latest version number from the web GitHub
-PerformHttpRequest( "https://raw.githubusercontent.com/SenkaWolf/FiveM-Standalone-RP-Chat-Command-Basic-Pack/master/version.txt", function( err, text, headers )
+PerformHttpRequest( "https://raw.githubusercontent.com/SenkaWolf/Latest-FiveM-Script-Versions/main/RPCCPack.txt", function( err, text, headers )
 	-- Wait to reduce spam 
 	Citizen.Wait( 2000 )
 
@@ -48,13 +48,22 @@ PerformHttpRequest( "https://raw.githubusercontent.com/SenkaWolf/FiveM-Standalon
 	-- Get the current resource version 
 	local curVer = GetCurrentVersion()
 	
-	if ( text ~= nil ) then 
+    -- Trim function to remove whitespace and newlines
+    local function trim(s)
+        return (s:gsub("^%s*(.-)%s*$", "%1"))
+    end
+	
+	if ( text ~= nil ) then
+	    -- Trim the text and current version
+        local trimmedText = trim(text)
+        local trimmedCurVer = trim(curVer)
+		
 		-- Print out the current and latest version 
-		print( "    ▒    Current Version: " .. curVer )
-		print( "    ▒    Latest Version: " .. text .."\n  ▒" )
+		print( "    ▒    Current Version: " .. trimmedCurVer )
+		print( "    ▒    Latest Version: " .. trimmedText .."\n  ▒" )
 		
 		-- If the versions are different, print it out
-		if ( text ~= curVer ) then
+		if trimmedText ~= trimmedCurVer then
 			print( "    ▒    ^1Your SenkaWolf-RPCCPack is outdated, go to https://github.com/SenkaWolf/FiveM-Standalone-RP-Chat-Command-Basic-Pack/releases to get the latest version.\n^0  ▒▒\n" )
 		else
 			print( "    ▒    ^2Your SenkaWolf-RPCCPack is up to date!\n^0  ▒\n  ▒▒\n" )
