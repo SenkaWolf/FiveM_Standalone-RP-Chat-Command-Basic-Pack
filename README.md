@@ -2,6 +2,8 @@
 
 A resource which has roleplay chat functions, basic commands and more to be used standalone in trainer/lambda menu and [FivePD](https://gtapolicemods.com/index.php?/files/file/808-fivepd/) based servers.
 
+For support join my Discord server @ https://discord.gg/GGCGdKHr39
+
 # Features
 ### Misc
 - Built In Version Checker.
