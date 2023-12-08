@@ -70,6 +70,6 @@ PerformHttpRequest( "https://raw.githubusercontent.com/SenkaWolf/Latest-FiveM-Sc
 		end
 	else 
 		-- In case the version can not be requested, print out an error message
-		print( "    ▒    ^1There was an error in the checks for the latest version, if the issue persists contact submit an issue @ https://github.com/SenkaWolf/FiveM-Standalone-RP-Chat-Command-Basic-Pack/issues \n^0  ▒\n  ▒▒\n" )
+		print( "    ▒    ^1There was an error in the checks for the latest version, if the issue persists make a ticket at @ https://discord.gg/GGCGdKHr39 \n^0  ▒\n  ▒▒\n" )
 	end 
 end )
