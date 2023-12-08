@@ -9,7 +9,7 @@ resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 name 'SenkaWolf-RPCCPack'
 description 'FiveM Standalone RP Chat & Command Basic Pack'
 author 'SenkaWolf (https://github.com/SenkaWolf)'
-version '2.3.1'
+version '2.3.2'
 url 'https://github.com/SenkaWolf/RPChat'
 
 -- Script
