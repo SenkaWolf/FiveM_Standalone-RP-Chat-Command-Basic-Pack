@@ -38,7 +38,7 @@ function GetCurrentVersion()
 end 
 
 -- Grabs the latest version number from the web GitHub
-PerformHttpRequest( "https://raw.githubusercontent.com/SenkaWolf/Latest-FiveM-Script-Versions/main/RPCCPack.txt", function( err, text, headers )
+PerformHttpRequest( "https://raw.githubusercontent.com/SenkaWolf/Versions/main/fivem/RPCCPack.txt", function( err, text, headers )
 	-- Wait to reduce spam 
 	Citizen.Wait( 2000 )
 
